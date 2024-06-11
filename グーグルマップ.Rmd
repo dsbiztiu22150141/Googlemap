@@ -1,0 +1,55 @@
+---
+title: "Untitled"
+author: "aaa"
+date: "2024-06-11"
+output: html_document
+---
+
+```{r}
+d <- read.csv(file = 'https://stats.dip.jp/01_ds/data/campus_location_TIU.csv')
+
+library(DT)
+datatable(d)
+
+```
+
+
+
+```{r}
+
+#install.packages('leaflet')
+library(leaflet)
+
+leaflet() %>%
+addTiles() %>% 
+addMarkers(lng = d$lng, lat = d$lat,
+           popup = paste0(d$name, '<br>', d$address)) %>% 
+addMiniMap(positio = 'topright') %>%
+addScaleBar(position="bottomleft")
+
+```
+
+
+#演習課題
+
+```{r}
+library(DT)
+d <- D
+datatable(d)
+
+```
+
+
+```{r}
+#install.packages('leaflet')
+library(leaflet)
+
+leaflet() %>%
+addTiles() %>% 
+addMarkers(lng = d$lng, lat = d$lat,
+           popup = paste0(d$name, '<br>', d$address)) %>% 
+addMiniMap(positio = 'topright') %>%
+addScaleBar(position="bottomleft")
+
+```
+
